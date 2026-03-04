@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ozed Exclusive | interior concepts</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter + Playfair Display for accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background-color: #fcfaf7;
+      color: #1f2e2c;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* ---------- TYPOGRAPHY & UTILS ---------- */
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: #c2a477;
+      border-radius: 3px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---------- NAVIGATION (clean, professional) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1.5rem 2rem;
+      background: #ffffffdd;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #eae3db;
+    }
+
+    .logo h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 1.9rem;
+      color: #264a4a;
+      letter-spacing: -0.02em;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: #8f7b64;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2a4747;
+      font-size: 1.05rem;
+      transition: 0.2s;
+      padding-bottom: 6px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: #b29167;
+      color: #1d362e;
+    }
+
+    /* mobile nav */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #2d4f4f;
+      cursor: pointer;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 4rem 2rem 5rem;
+      background: linear-gradient(125deg, #f2ede7 0%, #fcf9f5 80%);
+    }
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+    .hero-text {
+      flex: 1 1 380px;
+    }
+    .hero-text h1 {
+      font-size: 3.3rem;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #1c3f3f;
+      font-family: "Playfair Display", serif;
+    }
+    .hero-text .subhead {
+      font-size: 1.25rem;
+      color: #4f5f5a;
+      margin: 1.5rem 0 2rem;
+      max-width: 500px;
+    }
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #274d4d;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 12px 20px -14px #1e3f3f;
+      transition: all 0.25s;
+      border: 1px solid #406868;
+    }
+    .hero-btn i {
+      font-size: 1.4rem;
+    }
+    .hero-btn:hover {
+      background: #1d3b3b;
+      transform: translateY(-3px);
+      box-shadow: 0 22px 26px -14px #203f3f;
+    }
+
+    .hero-image {
+      flex: 1 1 380px;
+      background: #ddd2c4;
+      border-radius: 3rem 3rem 3rem 0.5rem;
+      min-height: 260px;
+      /* Placeholder SVG hero (assets/images/hero.jpg) - replace with your JPG/PNG if needed */
+      background-image: url('assets/images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 30px 30px 40px -30px #7d6b58;
+    }
+
+    /* ---------- SECTIONS general ---------- */
+    .section-pad {
+      padding: 5rem 2rem;
+    }
+    .bg-soft {
+      background-color: #f5f1eb;
+    }
+
+    /* about & services grid */
+    .about-grid, .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .about-card, .service-card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 24px -14px rgba(70, 50, 30, 0.08);
+      border: 1px solid #f0e7de;
+      transition: 0.15s;
+    }
+    .about-card:hover, .service-card:hover {
+      transform: scale(1.01);
+      border-color: #cbb295;
+    }
+    .about-card i, .service-card i {
+      font-size: 2.5rem;
+      color: #a58460;
+      margin-bottom: 1.5rem;
+    }
+    .about-card h3, .service-card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .service-card ul {
+      list-style: none;
+    }
+    .service-card li {
+      margin: 0.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 400;
+    }
+    .service-card li i {
+      font-size: 1.1rem;
+      color: #62807b;
+      margin-bottom: 0;
+    }
+
+    /* portfolio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .port-item {
+      background: #d9cdbe;
+      border-radius: 2rem 2rem 2rem 0.5rem;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+      transition: all 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem;
+      color: white;
+      font-weight: 600;
+      text-shadow: 0 2px 5px #1f2e2c;
+      border: 1px solid #ffffff50;
+    }
+    .port-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 26px -12px #ac9b87;
+    }
+
+    /* contact */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      background: white;
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 12px 30px -12px #c7bbad;
+    }
+    .contact-info {
+      flex: 1 1 250px;
+    }
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .contact-detail i {
+      font-size: 1.8rem;
+      background: #efe6db;
+      padding: 0.8rem;
+      border-radius: 50%;
+      color: #44655f;
+    }
+    .contact-form {
+      flex: 2 1 380px;
+      display: grid;
+      gap: 1rem;
+    }
+    .form-input, .form-textarea {
+      font-family: inherit;
+      padding: 1rem 1.2rem;
+      border: 1px solid #ddcfc0;
+      border-radius: 3rem;
+      background: #fcfaf8;
+      font-size: 1rem;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .form-textarea {
+      border-radius: 2rem;
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: #b4956f;
+      box-shadow: 0 0 0 3px #e5d5c3;
+    }
+    .submit-btn {
+      background: #264d4d;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 4rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: 0.2s;
+      width: 100%;
+    }
+    .submit-btn:hover {
+      background: #1c3b3b;
+    }
+    .submit-btn:disabled {
+      background: #95a8a5;
+      cursor: not-allowed;
+    }
+
+    /* form status messages */
+    .form-status {
+      padding: 1rem;
+      border-radius: 2rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    .form-status.success {
+      display: block;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .form-status.error {
+      display: block;
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    /* download section styles */
+    .download-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .download-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 12px 24px -14px rgba(70, 50, 30, 0.08);
+      border: 1px solid #f0e7de;
+      text-align: center;
+    }
+    
+    .download-card i {
+      font-size: 3rem;
+      color: #a58460;
+      margin-bottom: 1rem;
+    }
+    
+    .download-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #274d4d;
+    }
+    
+    .download-card p {
+      color: #4f5f5a;
+      margin-bottom: 1.5rem;
+    }
+    
+    .sample-btn {
+      display: inline-block;
+      background: #e1d4c4;
+      color: #274d4d;
+      padding: 0.8rem 2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 1px solid #cbb295;
+    }
+    
+    .sample-btn:hover {
+      background: #d4c2ac;
+      transform: translateY(-2px);
+    }
+
+    /* footer */
+    .footer {
+      background: #223b39;
+      color: #ddcfc0;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 6px solid #bda27e;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 800px) {
+      .navbar {
+        padding: 1rem 2rem;
+      }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0 1rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 1.2rem; }
+      .hero-text h1 { font-size: 2.3rem; }
+    }
+
+    /* extra style for product link (guide) */
+    .guide-highlight {
+      background: #e1d4c4;
+      border-radius: 3rem;
+      display: inline-block;
+    }
+    
+    /* modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal.show {
+      display: flex;
+    }
+    
+    .modal-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 2rem;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #4f5f5a;
+    }
+    
+    .modal i {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 1rem;
+    }
+    
+    .download-link {
+      display: inline-block;
+      background: #274d4d;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <h2>Ozed Exclusive</h2>
+      <p>Interior concepts</p>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#guides" class="guide-highlight" style="padding:0.3rem 1rem; background:#eadbcb; border-radius:40px;"><i class="fas fa-download"></i> Guides</a></li>
+    </ul>
+    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- HOME section (hero) -->
+  <section id="home" class="hero">
+    <div class="hero-content container">
+      <div class="hero-text">
+        <h1>Clean installation.<br>Perfect finish.</h1>
+        <p class="subhead">Precision-driven interior finishing — curtains, blinds & detailing. We turn measurements into masterpieces.</p>
+        <a href="#guides" class="hero-btn"><i class="fas fa-file-pdf"></i> Get our interior guides</a>
+        <p style="margin-top: 1.2rem; color: #5c6d68;"><i class="fas fa-check-circle" style="color:#9b8264;"></i> Trusted by homeowners & architects</p>
+      </div>
+      <div class="hero-image" aria-label="interior concept visual"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES section -->
+  <section id="services" class="section-pad bg-soft">
+    <div class="container">
+      <h2 class="section-title">Our services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-curtain"></i>
+          <h3>Curtain Installation</h3>
+          <ul>
+            <li><i class="fas fa-angles-right"></i> Eyelet, pleated & tailored</li>
+            <li><i class="fas fa-angles-right"></i> Track & pole fitting</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-blind"></i>
+          <h3>Window & Wooden Blinds</h3>
+          <ul>
+            <li><i class="fas fa-angles-right"></i> Venetian, vertical, roman</li>
+            <li><i class="fas fa-angles-right"></i> Custom wooden slats</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-sun"></i>
+          <h3>Day & Night Blinds</h3>
+          <ul>
+            <li><i class="fas fa-angles-right"></i> Zebra / duplex blinds</li>
+            <li><i class="fas fa-angles-right"></i> Light-filtering solutions</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-ruler"></i>
+          <h3>Measurement & Consultation</h3>
+          <ul>
+            <li><i class="fas fa-angles-right"></i> On‑site precision</li>
+            <li><i class="fas fa-angles-right"></i> 3D visual planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT section -->
+  <section id="about" class="section-pad">
+    <div class="container">
+      <h2 class="section-title">About us</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <i class="fas fa-helmet-safety"></i>
+          <h3>Professional core</h3>
+          <p>Ozed Exclusive Interior Concepts is a professional interior finishing brand specializing in curtain installation, window blinds, and clean interior detailing. We believe quality starts from precision.</p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-pen-fancy"></i>
+          <h3>Why we're different</h3>
+          <p>Every measurement is double‑checked, every fabric aligned. With 10+ years of combined site experience across Nigeria, we avoid mistakes that cost time and money.</p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-hand-sparkles"></i>
+          <h3>Finish matters</h3>
+          <p>From consultation to the last hook, we deliver a “perfect finish” — because interior details define a space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO section -->
+  <section id="portfolio" class="section-pad bg-soft">
+    <div class="container">
+      <h2 class="section-title">Portfolio glances</h2>
+      <div class="portfolio-grid">
+        <div class="port-item" style="background-image: linear-gradient(0deg, #1f2e2c80, #1f2e2c80), url('assets/images/curtaindrape.jpg');" role="img" aria-label="modern curtain drape">modern curtain drape</div>
+        <div class="port-item" style="background-image: linear-gradient(0deg, #1f2e2c80, #1f2e2c80), url('assets/images/wooden.jpg');" role="img" aria-label="wooden blinds">wooden blinds</div>
+        <div class="port-item" style="background-image: linear-gradient(0deg, #1f2e2c80, #1f2e2c80), url('assets/images/daynight.jpg');" role="img" aria-label="day & night blinds">day & night</div>
+        <div class="port-item" style="background-image: linear-gradient(0deg, #1f2e2c80, #1f2e2c80), url('assets/images/consult.jpg');" role="img" aria-label="consultation project">consultation project</div>
+      </div>
+      <p style="text-align: center; margin-top: 2.5rem; font-style: italic; color: #4a5f5a;"><i class="fas fa-camera"></i> real project images available upon request</p>
+    </div>
+  </section>
+
+  <!-- GUIDES / PRODUCT section with working download -->
+  <section id="guides" class="section-pad" style="background: #eae1d6;">
+    <div class="container" style="text-align: center; max-width: 1000px;">
+      <h2 class="section-title" style="display: block; text-align: center;">Avoid costly interior mistakes</h2>
+      <p style="font-size: 1.3rem; margin: 2rem 0;">Download our professional PDF guides – measurements, blinds & curtain know‑how, based on real Nigerian installation experience.</p>
+      
+      <!-- Sample free guide preview -->
+      <div class="download-options">
+        <div class="download-card">
+          <i class="fas fa-file-pdf"></i>
+          <h3>Free Sample Guide</h3>
+          <p>Preview our measurement techniques with this free chapter</p>
+          <a href="#" onclick="downloadSample(event)" class="sample-btn"><i class="fas fa-download"></i> Download Sample</a>
+        </div>
+        
+        <div class="download-card">
+          <i class="fas fa-file-pdf"></i>
+          <h3>Complete Bundle</h3>
+          <p>Full measurement guide + common mistakes (Nigerian context)</p>
+          <p style="font-size: 2rem; font-weight: 700; color: #274d4d;">₦4,000</p>
+          <a href="https://paystack.com/pay/ysk5huysyl" class="hero-btn" style="background:#8c694a; border-color:#ad8b68;" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-cart"></i> Buy Now</a>
+        </div>
+      </div>
+      
+      <p style="margin-top: 1.5rem;"><i class="fas fa-lock" style="color: #5f4e3a;"></i> Secure payment via Paystack · Instant download after payment</p>
+    </div>
+  </section>
+
+  <!-- CONTACT section with working form -->
+  <section id="contact" class="section-pad bg-soft">
+    <div class="container">
+      <h2 class="section-title">Let's talk precision</h2>
+      <div class="contact-row">
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <div class="contact-detail"><i class="fas fa-phone-alt"></i> +234 8147147493</div>
+          <div class="contact-detail"><i class="fas fa-envelope"></i> hello@ozedexclusiveinterior@gmail.com</div>
+          <div class="contact-detail"><i class="fas fa-map-pin"></i> Owerri, Nigeria</div>
+          <div style="margin-top: 2rem;">
+            <a href="#" style="color: #5f6e68; text-decoration: none;"><i class="fab fa-instagram" style="font-size:2rem; margin-right:1rem;"></i></a>
+            <a href="#" style="color: #5f6e68; text-decoration: none;"><i class="fab fa-facebook" style="font-size:2rem; margin-right:1rem;"></i></a>
+            <a href="#" style="color: #5f6e68; text-decoration: none;"><i class="fab fa-whatsapp" style="font-size:2rem;"></i></a>
+          </div>
+        </div>
+        
+        <!-- Working form using Formspree -->
+        <form class="contact-form" id="quickContact" action="https://formspree.io/f/mzzdlqrg" method="POST">
+          <input type="text" name="name" placeholder="Your name" class="form-input" required>
+          <input type="email" name="email" placeholder="Email address" class="form-input" required>
+          <textarea name="message" placeholder="Tell us about your project..." class="form-textarea" required></textarea>
+          
+          <!-- Form status messages -->
+          <div id="formStatus" class="form-status"></div>
+          
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Send message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Ozed Exclusive Interior Concepts — Clean installation, perfect finish.</p>
+    <p style="margin-top: 0.8rem; font-size: 0.9rem; color:#b8aa9a;">Professional interior finishing · Curtains · Blinds · Detailing</p>
+  </footer>
+
+  <!-- Success Modal for Downloads -->
+  <div id="downloadModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <i class="fas fa-check-circle"></i>
+      <h2 style="margin-bottom: 1rem; color: #274d4d;">Download Started!</h2>
+      <p id="modalMessage">Your file will download automatically.</p>
+      <a href="#" id="downloadLink" class="download-link" download>Click here if download doesn't start</a>
+    </div>
+  </div>
+
+  <!-- JavaScript for all functionality -->
+  <script>
+    // Mobile navigation toggle
+    const toggleBtn = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    // Smooth highlight on nav click
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(link => {
+      link.addEventListener('click', function(e) {
+        navItems.forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+        if (window.innerWidth <= 800) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
+
+    // Form submission handling with Formspree
+    const form = document.getElementById('quickContact');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        formStatus.className = 'form-status';
+        formStatus.style.display = 'none';
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent. We\'ll respond within 24 hours.';
+            formStatus.style.display = 'block';
+            form.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          formStatus.className = 'form-status error';
+          formStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Oops! There was a problem. Please try again or contact us directly.';
+          formStatus.style.display = 'block';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send message';
+        }
+      });
+    }
+
+    // Active nav link on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          if (navLink) {
+            navItems.forEach(item => item.classList.remove('active'));
+            navLink.classList.add('active');
+          }
+        }
+      });
+    });
+
+    // Download Functions
+    function downloadSample(event) {
+      event.preventDefault();
+      
+      // Create a sample PDF content (in real implementation, this would be a real PDF file)
+      const sampleContent = `INTERIOR MEASUREMENT GUIDE - SAMPLE CHAPTER
+      
+      HOW TO MEASURE WINDOWS CORRECTLY
+      
+      1. Always measure width at three points: top, middle, bottom
+      2. Use the smallest measurement for track width
+      3. For drop, measure from track to where you want the curtain to end
+      4. Always use a metal tape measure for accuracy
+      
+      This is a sample of our complete guide. Purchase the full version for detailed instructions,
+      common mistakes, and professional tips specific to Nigerian homes.`;
+      
+      const blob = new Blob([sampleContent], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'interior-measurement-sample.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+      
+      // Show success modal
+      showModal('Sample guide downloaded! Check your downloads folder.');
+    }
+    
+    function processPayment() {
+      // In production, replace with actual Paystack integration
+      // This is a simulation for demonstration
+      
+      // Show payment processing modal
+      alert('This is a demo. In production, this would redirect to Paystack payment page.\n\nFor testing, we\'ll simulate a successful payment and download.');
+      
+      // Simulate successful payment and download
+      setTimeout(() => {
+        downloadFullBundle();
+      }, 500);
+    }
+    
+    function downloadFullBundle() {
+      // Create full bundle content
+      const fullContent = `INTERIOR MEASUREMENT & MISTAKES GUIDE - COMPLETE BUNDLE
+      
+      PART 1: MEASUREMENT MASTERY
+      - Tools you need
+      - Step-by-step measuring for different window types
+      - Accounting for obstructions
+      - Allowing for proper overlap
+      
+      PART 2: COMMON MISTAKES NIGERIANS MAKE
+      - Wrong track measurements
+      - Ignoring ceiling height variations
+      - Not accounting for AC units
+      - Fabric shrinkage misconceptions
+      - Installation timing errors
+      
+      PART 3: PRO TIPS
+      - Dealing with uneven walls
+      - Choosing the right stacking space
+      - Motorization considerations
+      
+      © 2026 Ozed Exclusive Interior Concepts`;
+      
+      const blob = new Blob([fullContent], { type: 'text/plain' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'interior-measurement-complete-bundle.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+      
+      // Show success modal
+      showModal('Payment successful! Complete bundle downloaded. Check your downloads folder.');
+    }
+    
+    // Modal functions
+    function showModal(message) {
+      const modal = document.getElementById('downloadModal');
+      const modalMessage = document.getElementById('modalMessage');
+      const downloadLink = document.getElementById('downloadLink');
+      
+      modalMessage.textContent = message;
+      modal.classList.add('show');
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        modal.classList.remove('show');
+      }, 5000);
+    }
+    
+    function closeModal() {
+      document.getElementById('downloadModal').classList.remove('show');
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('downloadModal');
+      if (event.target === modal) {
+        modal.classList.remove('show');
+      }
+    }
+  </script>
+</body>
+</html>
